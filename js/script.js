@@ -96,9 +96,8 @@ const langLabel  = document.getElementById("langLabel");
 
 langToggle.addEventListener("click", function () {
     currentLang = currentLang === "en" ? "fr" : "en";
-    // ✅ src pour l'image drapeau
-    langLabel.src = currentLang === "en" ? "https://flagcdn.com/w40/fr.png" : "https://flagcdn.com/w40/gb.png";
-    langLabel.alt = currentLang === "en" ? "FR" : "EN";
+    langLabel.textContent = currentLang === "en" ? "🇫🇷" : "🇬🇧";
+    document.documentElement.lang = currentLang;
     applyLanguage(currentLang);
 });
 
@@ -122,5 +121,51 @@ function applyLanguage(lang) {
     });
 }
 /* =======================================================Droit d'auteur ===================================*/
-// Copyright année automatique
 document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ========================= Âge dynamique ========================= */
+(function () {
+    var birth = new Date(1997, 3, 3); // 03 Avril 1997 (mois 0-indexé)
+    var today = new Date();
+    var age = today.getFullYear() - birth.getFullYear();
+    if (today.getMonth() < birth.getMonth() ||
+        (today.getMonth() === birth.getMonth() && today.getDate() < birth.getDate())) {
+        age--;
+    }
+    document.getElementById("age").textContent = age;
+})();
+
+/* ========================= Feedback formulaire ========================= */
+(function () {
+    var form = document.querySelector(".contact-form form");
+    var feedback = document.getElementById("form-feedback");
+    if (!form || !feedback) return;
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { "Accept": "application/json" }
+        }).then(function (res) {
+            if (res.ok) {
+                feedback.textContent = currentLang === "fr"
+                    ? "✅ Message envoyé avec succès ! Je vous répondrai très bientôt."
+                    : "✅ Message sent successfully! I will get back to you very soon.";
+                feedback.style.display = "block";
+                feedback.style.background = "#d4edda";
+                feedback.style.color = "#155724";
+                form.reset();
+            } else {
+                throw new Error("Erreur serveur");
+            }
+        }).catch(function () {
+            feedback.textContent = currentLang === "fr"
+                ? "❌ Une erreur est survenue. Veuillez réessayer ou m'écrire directement à hamadiallo789@gmail.com"
+                : "❌ An error occurred. Please try again or contact me directly at hamadiallo789@gmail.com";
+            feedback.style.display = "block";
+            feedback.style.background = "#f8d7da";
+            feedback.style.color = "#721c24";
+        });
+    });
+})();
