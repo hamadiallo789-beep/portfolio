@@ -11,40 +11,33 @@ document.querySelectorAll(".section").forEach((section) => {
 });
 /* ========================= theme colors ========================= */
 const alternateStyles = document.querySelectorAll(".alternate-style");
-
-function setActiveStyle(color) {
-    alternateStyles.forEach((style) => {
-        if (color === style.getAttribute("title")) {
+function setActiveStyle(color)
+{
+    alternateStyles.forEach ((style) => {
+        if(color === style.getAttribute("title"))
+        {
             style.removeAttribute("disabled");
-        } else {
+        }
+        else
+        {
             style.setAttribute("disabled", "true");
         }
-    });
-    localStorage.setItem("portfolioColor", color);
+    })
 }
-
 /* ========================= theme light and dark mode ========================= */
 const dayNight = document.querySelector(".day-night");
-dayNight.addEventListener("click", () => {
+dayNight.addEventListener("click", () =>{
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
-    document.body.classList.toggle("dark");
-    localStorage.setItem("portfolioDark", document.body.classList.contains("dark"));
-});
-
-/* ========================= Restore preferences on load ========================= */
-window.addEventListener("load", () => {
-    // Couleur sauvegardée
-    const savedColor = localStorage.getItem("portfolioColor");
-    if (savedColor) {
-        setActiveStyle(savedColor);
-    }
-    // Mode sombre sauvegardé
-    const savedDark = localStorage.getItem("portfolioDark");
-    if (savedDark === "true") {
-        document.body.classList.add("dark");
+    document.body.classList.toggle("dark")
+})
+window.addEventListener("load",() => {
+    if(document.body.classList.contains("dark"))
+    {
         dayNight.querySelector("i").classList.add("fa-sun");
-    } else {
+    }
+    else
+    {
         dayNight.querySelector("i").classList.add("fa-moon");
     }
-});
+})
