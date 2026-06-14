@@ -1010,6 +1010,83 @@ h3.my-profession
 .portfolio .portfolio-link:hover {
     gap: 10px;
 }
+/* ===== Certifications ===== */
+.certifications .cert-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 25px;
+}
+.certifications .cert-item-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-left: 4px solid var(--skin-color);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+.certifications .cert-item-inner:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(48,46,77,0.12);
+}
+.certifications .cert-icon {
+    min-width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--skin-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.certifications .cert-icon i {
+    font-size: 22px;
+    color: #ffffff;
+}
+.certifications .cert-info {
+    flex: 1;
+}
+.certifications .cert-badge {
+    display: inline-block;
+    background: rgba(0,0,0,0.06);
+    color: var(--skin-color);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+.certifications .cert-info h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+.certifications .cert-date {
+    font-size: 12px;
+    color: var(--text-black-700);
+}
+.certifications .cert-date .fa {
+    margin-right: 5px;
+    color: var(--skin-color);
+}
+.cert-btn-wrap {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+@media (max-width: 767px) {
+    .certifications .cert-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
 /* ===== Validation formulaire ===== */
 .form-error {
     display: block;
