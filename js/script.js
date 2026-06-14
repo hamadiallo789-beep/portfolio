@@ -128,22 +128,6 @@ function applyLanguage(lang) {
         currentYear > creationYear ? creationYear + " – " + currentYear : creationYear;
 })();
 
-/* ========================= Filtres Portfolio ========================= */
-document.querySelectorAll(".filter-btn").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-        document.querySelectorAll(".filter-btn").forEach(function (b) { b.classList.remove("active"); });
-        this.classList.add("active");
-        var filter = this.getAttribute("data-filter");
-        document.querySelectorAll(".portfolio-item").forEach(function (item) {
-            if (filter === "all" || item.getAttribute("data-category") === filter) {
-                item.style.display = "block";
-            } else {
-                item.style.display = "none";
-            }
-        });
-    });
-});
-
 /* ========================= Animation barres de compétences ========================= */
 function animateSkills() {
     document.querySelectorAll(".progress-in[data-width]").forEach(function (bar) {

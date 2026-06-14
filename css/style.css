@@ -661,69 +661,6 @@ h3.my-profession
     color: var(--text-black-700);
     line-height: 26px;
 }
-/* ===== Filtres Portfolio ===== */
-.portfolio-filters {
-    flex: 0 0 100%;
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 35px;
-}
-.filter-btn {
-    padding: 8px 20px;
-    border: 2px solid var(--skin-color);
-    background: transparent;
-    color: var(--skin-color);
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Poppins', sans-serif;
-}
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--skin-color);
-    color: #ffffff;
-}
-
-/* ===== Overlay Portfolio ===== */
-.portfolio .portfolio-img {
-    position: relative;
-    overflow: hidden;
-}
-.portfolio-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-.portfolio .portfolio-item-inner:hover .portfolio-overlay {
-    opacity: 1;
-}
-.overlay-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--skin-color);
-    color: #ffffff;
-    padding: 10px 22px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    transition: transform 0.3s ease;
-}
-.overlay-btn:hover {
-    transform: scale(1.06);
-    color: #ffffff;
-}
-
 /* Portfolio*/
 .portfolio  .container
 {
