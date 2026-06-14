@@ -128,6 +128,32 @@ function applyLanguage(lang) {
         currentYear > creationYear ? creationYear + " – " + currentYear : creationYear;
 })();
 
+/* ========================= Animation barres de compétences ========================= */
+function animateSkills() {
+    document.querySelectorAll(".progress-in[data-width]").forEach(function (bar) {
+        var target = bar.getAttribute("data-width") + "%";
+        bar.style.transition = "width 1.2s ease-in-out";
+        bar.style.width = target;
+    });
+}
+function resetSkills() {
+    document.querySelectorAll(".progress-in[data-width]").forEach(function (bar) {
+        bar.style.transition = "none";
+        bar.style.width = "0%";
+    });
+}
+
+// Observer les clics nav pour déclencher l'animation
+navList.forEach(function (li) {
+    li.querySelector("a").addEventListener("click", function () {
+        var target = this.getAttribute("href").split("#")[1];
+        if (target === "about") {
+            resetSkills();
+            setTimeout(animateSkills, 400);
+        }
+    });
+});
+
 /* ========================= Âge dynamique ========================= */
 (function () {
     var birth = new Date(1997, 3, 3); // 03 Avril 1997 (mois 0-indexé)
