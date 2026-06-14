@@ -128,36 +128,6 @@ function applyLanguage(lang) {
         currentYear > creationYear ? creationYear + " – " + currentYear : creationYear;
 })();
 
-/* ========================= Compteurs animés Home ========================= */
-function animateCounters() {
-    document.querySelectorAll(".counter").forEach(function (counter) {
-        var target = parseInt(counter.getAttribute("data-target"));
-        var current = 0;
-        var step = Math.ceil(target / 40);
-        var timer = setInterval(function () {
-            current += step;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            counter.textContent = current;
-        }, 40);
-    });
-}
-// Lancer les compteurs quand la section Home devient active
-var homeCountersDone = false;
-document.querySelector("a[href='#home']").addEventListener("click", function () {
-    homeCountersDone = false;
-});
-(function waitForHome() {
-    var homeSection = document.querySelector("#home");
-    if (homeSection && homeSection.classList.contains("active") && !homeCountersDone) {
-        homeCountersDone = true;
-        animateCounters();
-    }
-    setTimeout(waitForHome, 500);
-})();
-
 /* ========================= Âge dynamique ========================= */
 (function () {
     var birth = new Date(1997, 3, 3); // 03 Avril 1997 (mois 0-indexé)
