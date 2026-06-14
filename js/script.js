@@ -121,7 +121,12 @@ function applyLanguage(lang) {
     });
 }
 /* =======================================================Droit d'auteur ===================================*/
-document.getElementById("year").textContent = new Date().getFullYear();
+(function () {
+    var creationYear = 2025;
+    var currentYear = new Date().getFullYear();
+    document.getElementById("year").textContent =
+        currentYear > creationYear ? creationYear + " – " + currentYear : creationYear;
+})();
 
 /* ========================= Âge dynamique ========================= */
 (function () {
