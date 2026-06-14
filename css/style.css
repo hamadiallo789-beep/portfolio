@@ -1057,9 +1057,9 @@ h3.my-profession
     color: #fff;
     flex-shrink: 0;
 }
-.cert-google  { background: #4285F4; }
-.cert-microsoft { background: #00A4EF; font-size: 22px; }
-.cert-ibm     { background: #1F70C1; font-size: 13px; letter-spacing: 1px; }
+.cert-google     { background: #ffffff; border: 1px solid #e0e0e0; color: #4285F4; font-size: 24px; }
+.cert-microsoft  { background: #ffffff; border: 1px solid #e0e0e0; color: #00A4EF; font-size: 24px; }
+.cert-ibm        { background: #1F70C1; color: #ffffff; font-size: 14px; font-weight: 900; letter-spacing: 2px; }
 .certifications .cert-badge {
     display: inline-block;
     background: var(--bg-black-50);
