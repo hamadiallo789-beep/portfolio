@@ -105,7 +105,7 @@ ul
 }
 .section-title h2
 {
-    font-size: 40px;
+    font-size: 32px;
     color: var(--text-black-900);
     font-weight: 700;
     position: relative;
@@ -324,24 +324,23 @@ ul
 }
 h3.hello
 {
-    font-size: 28px;
+    font-size: 22px;
     margin: 15px 0;
 }
 h3.hello span
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 700;
-    color: var(--text-black-900); /* noir pour tout le monde */
+    color: var(--text-black-900);
 }
-
 h3.hello span.name
 {
-    color: var(--skin-color); /* rouge uniquement pour Hama DIALLO */
+    color: var(--skin-color);
 }
 h3.my-profession
 {
-    font-size: 30px;
+    font-size: 22px;
     margin: 15px 0;
 }
 .typing
@@ -350,8 +349,8 @@ h3.my-profession
 }
 .home-info p
 {
-    margin-bottom: 70px;
-    font-size: 20px;
+    margin-bottom: 40px;
+    font-size: 15px;
     color: var(--text-black-700);
 }
 .home .home-img
@@ -418,8 +417,8 @@ h3.my-profession
 }
 .about .about-content .about-text p
 {
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 24px;
     color: var(--text-black-700);
 }
 .about .about-content .personal-info
@@ -448,13 +447,11 @@ h3.my-profession
     margin-left: 4px;
     display: inline-block;
 }
-.about .about-content .personal-info .buttons
-{
-    margin-top: 30px; /* les boutons de telechargement de CV et Engager Moi*/
-}
-.about .about-content .personal-info .buttons .btn
-{
-    margin-top: 10px;
+.hire-me-center {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 30px;
 }
 .about .about-content .skills
 {
@@ -579,15 +576,15 @@ h3.my-profession
 .about .about-content .timeline .timeline-title
 {
     font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 15px;
+    margin-bottom: 10px;
     text-transform: capitalize;
     color: var(--text-black-900);
 }
 .about .about-content .timeline .timeline-text
 {
-    line-height: 25px;
-    font-size: 16px;
+    line-height: 22px;
+    font-size: 13px;
     text-align: justify;
     color: var(--text-black-700);
 }
@@ -649,17 +646,17 @@ h3.my-profession
 }
 .service .service-item .service-item-inner h4
 {
-    font-size: 20px;
-    margin-bottom: 12px;
+    font-size: 17px;
+    margin-bottom: 10px;
     color: var(--text-black-900);
     font-weight: 700;
     text-transform: capitalize;
 }
 .service .service-item .service-item-inner p
 {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--text-black-700);
-    line-height: 26px;
+    line-height: 22px;
 }
 /* Portfolio*/
 .portfolio  .container
