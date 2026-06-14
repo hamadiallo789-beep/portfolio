@@ -102,6 +102,14 @@ langToggle.addEventListener("click", function () {
 });
 
 function applyLanguage(lang) {
+    // Paragraphe about dynamique
+    var enP = document.getElementById("about-text-en");
+    var frP = document.getElementById("about-text-fr");
+    if (enP && frP) {
+        enP.style.display = lang === "fr" ? "none" : "block";
+        frP.style.display = lang === "fr" ? "block" : "none";
+    }
+
     document.querySelectorAll("[data-en]").forEach(function (el) {
         if (el.tagName !== "INPUT" && el.tagName !== "TEXTAREA" && !el.querySelector("[data-en]")) {
             el.textContent = lang === "fr" ? el.getAttribute("data-fr") : el.getAttribute("data-en");
@@ -153,6 +161,14 @@ navList.forEach(function (li) {
         }
     });
 });
+
+/* ========================= Années d'expérience dynamiques ========================= */
+(function () {
+    var startYear = 2021; // Début de l'expérience professionnelle
+    var years = new Date().getFullYear() - startYear;
+    document.getElementById("exp-years-en").textContent = years;
+    document.getElementById("exp-years-fr").textContent = years;
+})();
 
 /* ========================= Âge dynamique ========================= */
 (function () {
