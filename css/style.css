@@ -464,7 +464,7 @@ h3.my-profession
     flex: 0 0 100%;
     max-width: 100%;
 }
-.about .about-content .skills .skill-item h5
+.about .about-content .skill-item h5
 {
     line-height: 40px;
     font-weight: 600;
@@ -472,7 +472,7 @@ h3.my-profession
     color: var(--text-black-900);
     text-transform: capitalize;
 }
-.about .about-content .skills .skill-item .progress
+.about .about-content .skill-item .progress
 {
     background-color: var(--bg-black-50);
     height: 7px;
@@ -480,11 +480,11 @@ h3.my-profession
     width: 100%;
     position: relative;
 }
-.about .about-content .skills .skill-item
+.about .about-content .skill-item
 {
     margin-bottom: 25px;
 }
-.about .about-content .skills .skill-item .progress .progress-in
+.about .about-content .skill-item .progress .progress-in
 {
     position: absolute;
     left: 0;
@@ -495,7 +495,7 @@ h3.my-profession
     width: 0%;
     transition: width 1.2s ease-in-out;
 }
-.about .about-content .skills .skill-item .skill-percent
+.about .about-content .skill-item .skill-percent
 {
     position: absolute;
     right: 0;
