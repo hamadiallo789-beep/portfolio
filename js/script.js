@@ -166,37 +166,121 @@ navList.forEach(function (li) {
     document.getElementById("age").textContent = age;
 })();
 
-/* ========================= Feedback formulaire ========================= */
+/* ========================= Validation + Envoi formulaire ========================= */
 (function () {
-    var form = document.querySelector(".contact-form form");
+    var form = document.getElementById("contact-form");
     var feedback = document.getElementById("form-feedback");
     if (!form || !feedback) return;
+
+    function setError(inputId, errorId, msg) {
+        var input = document.getElementById(inputId);
+        var error = document.getElementById(errorId);
+        input.classList.add("input-error");
+        input.classList.remove("input-ok");
+        error.textContent = msg;
+    }
+    function setOk(inputId, errorId) {
+        var input = document.getElementById(inputId);
+        var error = document.getElementById(errorId);
+        input.classList.remove("input-error");
+        input.classList.add("input-ok");
+        error.textContent = "";
+    }
+    function clearAll() {
+        ["form-name","form-email","form-subject","form-message"].forEach(function(id) {
+            var el = document.getElementById(id);
+            el.classList.remove("input-error","input-ok");
+        });
+        ["error-name","error-email","error-subject","error-message"].forEach(function(id) {
+            document.getElementById(id).textContent = "";
+        });
+    }
+
     form.addEventListener("submit", function (e) {
         e.preventDefault();
-        var data = new FormData(form);
+        clearAll();
+        var isFr = currentLang === "fr";
+        var name    = document.getElementById("form-name").value.trim();
+        var email   = document.getElementById("form-email").value.trim();
+        var subject = document.getElementById("form-subject").value.trim();
+        var message = document.getElementById("form-message").value.trim();
+        var emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var valid = true;
+
+        if (!name) {
+            setError("form-name", "error-name", isFr ? "Le nom est requis." : "Name is required.");
+            valid = false;
+        } else { setOk("form-name", "error-name"); }
+
+        if (!email) {
+            setError("form-email", "error-email", isFr ? "L'email est requis." : "Email is required.");
+            valid = false;
+        } else if (!emailReg.test(email)) {
+            setError("form-email", "error-email", isFr ? "Format d'email invalide." : "Invalid email format.");
+            valid = false;
+        } else { setOk("form-email", "error-email"); }
+
+        if (!subject) {
+            setError("form-subject", "error-subject", isFr ? "L'objet est requis." : "Subject is required.");
+            valid = false;
+        } else { setOk("form-subject", "error-subject"); }
+
+        if (!message) {
+            setError("form-message", "error-message", isFr ? "Le message est requis." : "Message is required.");
+            valid = false;
+        } else { setOk("form-message", "error-message"); }
+
+        if (!valid) return;
+
+        var btn = document.getElementById("submit-btn");
+        btn.disabled = true;
+        btn.textContent = isFr ? "Envoi en cours..." : "Sending...";
+
         fetch(form.action, {
             method: "POST",
-            body: data,
+            body: new FormData(form),
             headers: { "Accept": "application/json" }
         }).then(function (res) {
             if (res.ok) {
-                feedback.textContent = currentLang === "fr"
+                feedback.textContent = isFr
                     ? "✅ Message envoyé avec succès ! Je vous répondrai très bientôt."
                     : "✅ Message sent successfully! I will get back to you very soon.";
-                feedback.style.display = "block";
                 feedback.style.background = "#d4edda";
                 feedback.style.color = "#155724";
                 form.reset();
-            } else {
-                throw new Error("Erreur serveur");
-            }
+                clearAll();
+            } else { throw new Error(); }
         }).catch(function () {
-            feedback.textContent = currentLang === "fr"
-                ? "❌ Une erreur est survenue. Veuillez réessayer ou m'écrire directement à hamadiallo789@gmail.com"
-                : "❌ An error occurred. Please try again or contact me directly at hamadiallo789@gmail.com";
-            feedback.style.display = "block";
+            feedback.textContent = isFr
+                ? "❌ Une erreur est survenue. Écrivez-moi à hamadiallo789@gmail.com"
+                : "❌ An error occurred. Contact me at hamadiallo789@gmail.com";
             feedback.style.background = "#f8d7da";
             feedback.style.color = "#721c24";
+        }).finally(function () {
+            feedback.style.display = "block";
+            btn.disabled = false;
+            btn.textContent = isFr ? "Envoyer le Message" : "Send Message";
         });
+    });
+})();
+
+/* ========================= Scroll to Top ========================= */
+(function () {
+    var btn = document.getElementById("scroll-top");
+    var activeSection = document.querySelector(".section.active");
+
+    document.querySelectorAll(".section").forEach(function (section) {
+        section.addEventListener("scroll", function () {
+            if (this.scrollTop > 300) {
+                btn.classList.add("visible");
+            } else {
+                btn.classList.remove("visible");
+            }
+        });
+    });
+
+    btn.addEventListener("click", function () {
+        var active = document.querySelector(".section.active");
+        if (active) active.scrollTo({ top: 0, behavior: "smooth" });
     });
 })();

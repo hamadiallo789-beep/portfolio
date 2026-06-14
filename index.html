@@ -559,43 +559,47 @@
                 <div class="contact-info-item padd-15">
                     <div class="icon"><i class="fa fa-globe-africa"></i></div>
                     <h4 data-en="Website" data-fr="Site Web">Website</h4>
-                    <p>www.hamadiallo.com</p>
+                    <p>hamadiallo789-beep.github.io/portfolio</p>
                 </div>
             </div>
             <h3 class="contact-title padd-15" data-en="SEND ME AN EMAIL" data-fr="ENVOYEZ-MOI UN EMAIL">SEND ME AN EMAIL</h3>
             <h4 class="contact-sub-title padd-15" data-en="I'M VERY RESPONSIVE TO MESSAGES" data-fr="JE RÉPONDS TRÈS RAPIDEMENT AUX MESSAGES">I'M VERY RESPONSIVE TO MESSAGES</h4>
             <div class="row">
                 <div class="contact-form padd-15">
-    <form action="https://formspree.io/f/xwvwvrdw" method="POST">
+    <form id="contact-form" action="https://formspree.io/f/xwvwvrdw" method="POST" novalidate>
         <div class="row">
             <div class="form-item col-6 padd-15">
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" data-placeholder-en="Name" data-placeholder-fr="Nom" placeholder="Name">
+                    <input type="text" id="form-name" name="name" class="form-control" data-placeholder-en="Name *" data-placeholder-fr="Nom *" placeholder="Name *">
+                    <span class="form-error" id="error-name"></span>
                 </div>
             </div>
             <div class="form-item col-6 padd-15">
                 <div class="form-group">
-                    <input type="email" name="email" class="form-control" placeholder="Email">
+                    <input type="email" id="form-email" name="email" class="form-control" data-placeholder-en="Email *" data-placeholder-fr="Email *" placeholder="Email *">
+                    <span class="form-error" id="error-email"></span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="form-item col-12 padd-15">
                 <div class="form-group">
-                    <input type="text" name="subject" class="form-control" data-placeholder-en="Subject" data-placeholder-fr="Objet" placeholder="Subject">
+                    <input type="text" id="form-subject" name="subject" class="form-control" data-placeholder-en="Subject *" data-placeholder-fr="Objet *" placeholder="Subject *">
+                    <span class="form-error" id="error-subject"></span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="form-item col-12 padd-15">
                 <div class="form-group">
-                    <textarea name="message" class="form-control" data-placeholder-en="Message" data-placeholder-fr="Message" placeholder="Message"></textarea>
+                    <textarea id="form-message" name="message" class="form-control" data-placeholder-en="Message *" data-placeholder-fr="Message *" placeholder="Message *"></textarea>
+                    <span class="form-error" id="error-message"></span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="form-item col-12 padd-15">
-                <button type="submit" class="btn" data-en="Send Message" data-fr="Envoyer le Message">Send Message</button>
+                <button type="submit" class="btn" id="submit-btn" data-en="Send Message" data-fr="Envoyer le Message">Send Message</button>
             </div>
         </div>
         <div id="form-feedback" style="display:none; margin-top:10px; padding:10px; border-radius:5px;"></div>
@@ -665,6 +669,11 @@
     
 </div>
 <!--=== Style Switcher End ===-->
+
+<!-- Bouton Scroll to Top -->
+<button id="scroll-top" title="Retour en haut" aria-label="Retour en haut">
+    <i class="fas fa-chevron-up"></i>
+</button>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/script.js"></script>
