@@ -352,6 +352,8 @@ h3.my-profession
     margin-bottom: 40px;
     font-size: 15px;
     color: var(--text-black-700);
+    text-align: justify;
+    line-height: 1.7;
 }
 .home .home-img
 {
@@ -418,8 +420,9 @@ h3.my-profession
 .about .about-content .about-text p
 {
     font-size: 14px;
-    line-height: 24px;
+    line-height: 1.8;
     color: var(--text-black-700);
+    text-align: justify;
 }
 .about .about-content .personal-info
 {
@@ -464,25 +467,38 @@ h3.my-profession
     flex: 0 0 100%;
     max-width: 100%;
 }
+.about .about-content .skill-item
+{
+    margin-bottom: 18px;
+}
+.about .about-content .skill-item .skill-header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
 .about .about-content .skill-item h5
 {
-    line-height: 40px;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 13px;
     color: var(--text-black-900);
     text-transform: capitalize;
+    margin: 0;
+}
+.about .about-content .skill-item .skill-percent
+{
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--skin-color);
 }
 .about .about-content .skill-item .progress
 {
     background-color: var(--bg-black-50);
-    height: 7px;
+    height: 6px;
     border-radius: 4px;
     width: 100%;
     position: relative;
-}
-.about .about-content .skill-item
-{
-    margin-bottom: 25px;
 }
 .about .about-content .skill-item .progress .progress-in
 {
@@ -495,15 +511,6 @@ h3.my-profession
     width: 0%;
     transition: width 1.2s ease-in-out;
 }
-.about .about-content .skill-item .skill-percent
-{
-    position: absolute;
-    right: 0;
-    color: var(--text-black-900);
-    top: -40px;
-    font-weight: 400;
-    line-height: 40px;
-}
 .about .about-content .education,
 .about .about-content .experience
 {
@@ -513,10 +520,10 @@ h3.my-profession
 }
 .about .about-content h3.title
 {
-    font-size: 24px;
-    margin-bottom: 30px;
+    font-size: 18px;
+    margin-bottom: 20px;
     font-weight: 700;
-    color: var(--text-black-900);
+    color: var(--skin-color);
 }
 .about .about-content .timeline-box
 {
@@ -583,8 +590,8 @@ h3.my-profession
 }
 .about .about-content .timeline .timeline-text
 {
-    line-height: 22px;
     font-size: 13px;
+    line-height: 1.7;
     text-align: justify;
     color: var(--text-black-700);
 }
@@ -656,7 +663,8 @@ h3.my-profession
 {
     font-size: 13px;
     color: var(--text-black-700);
-    line-height: 22px;
+    line-height: 1.7;
+    text-align: justify;
 }
 /* Portfolio*/
 .portfolio  .container
@@ -731,10 +739,10 @@ h3.my-profession
     text-transform: capitalize;
     margin: 15px 0 5px;
 }
-.contact .contact-info-item p 
+.contact .contact-info-item p
 {
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 1.6;
     color: var(--text-black-700);
     font-weight: 400;
 }
@@ -979,9 +987,10 @@ h3.my-profession
     margin: 5px 0;
 }
 .portfolio .portfolio-desc {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-black-700);
-    line-height: 22px;
+    line-height: 1.7;
+    text-align: justify;
     flex: 1;
 }
 .portfolio .portfolio-link {
