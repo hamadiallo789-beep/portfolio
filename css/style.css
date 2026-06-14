@@ -19,7 +19,7 @@ body
 {
     line-height: 1.5;
     font-size: 16px;
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 *
 {
@@ -201,7 +201,7 @@ ul
 .Hama .logo a span
 {
     font-family: 'Clicker Script';
-    font-family: 40px;
+    font-size: 40px;
 }
 .Hama .logo a::before
 {
