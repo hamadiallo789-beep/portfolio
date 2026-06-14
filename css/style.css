@@ -368,8 +368,10 @@ h3.my-profession
     height: 320px;
     width: 320px;
     object-fit: cover;
+    object-position: top center;
     position: relative;
     z-index: 1;
+    display: block;
 }
 
 /* Cercle rotatif autour de la photo */
@@ -863,18 +865,11 @@ h3.my-profession
     {
         display: none;
     }
-}
-@media (max-width: 576px) {
-    .home .home-img .circle-spin {
-        width: 270px;
-        height: 270px;
-    }
-    .home .home-img img {
-        height: 240px;
-        width: 240px;
+    .home.section {
+        padding-top: 70px;
     }
 }
-@media (max-width: 767px) 
+@media (max-width: 767px)
 {
     .contact .contact-form .col-6,
     .contact .contact-info-item,
@@ -887,6 +882,35 @@ h3.my-profession
     {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+}
+@media (max-width: 576px) {
+    .home .home-img .circle-spin {
+        width: 270px;
+        height: 270px;
+    }
+    .home .home-img img {
+        height: 240px;
+        width: 240px;
+    }
+    .section-title h2 {
+        font-size: 28px;
+    }
+    .about .about-content h3.title {
+        font-size: 20px;
+    }
+    .home-info p {
+        font-size: 16px;
+    }
+    h3.hello, h3.my-profession {
+        font-size: 22px;
+    }
+    .contact-title {
+        font-size: 20px;
+    }
+    .btn {
+        padding: 10px 25px;
+        font-size: 14px;
     }
 }
 /* Icônes réseaux sociaux Contact */
