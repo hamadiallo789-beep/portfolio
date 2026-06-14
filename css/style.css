@@ -408,14 +408,18 @@ h3.my-profession
     flex: 0 0 100%;
     max-width: 100%;
 }
+.about .about-content .about-text h3
+{
+    font-size: 18px;
+    margin-bottom: 12px;
+}
 .about .about-content .about-text h3 span
 {
-    color: var(--text-black-900); /* noir pour tout */
+    color: var(--text-black-900);
 }
-
 .about .about-content .about-text h3 span.name
 {
-    color: var(--skin-color); /* rouge uniquement pour Hama DIALLO et Data Scientist */
+    color: var(--skin-color);
 }
 .about .about-content .about-text p
 {
@@ -437,9 +441,9 @@ h3.my-profession
 }
 .about .about-content .personal-info .info-item p
 {
-    font-weight: 600;
-    padding: 10px 0;
-    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 0;
+    font-size: 13px;
     color: var(--text-black-900);
     border-bottom: 1px solid var(--bg-black-50);
 }
