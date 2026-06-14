@@ -361,33 +361,67 @@ h3.my-profession
     text-align: center;
     position: relative;
 }
-.home-img::after
-{
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    border-bottom: 10px solid var(--skin-color);
-    border-right: 10px solid var(--skin-color);
-    right: 20px;
-    bottom: -40px;
-}
-.home-img::before
-{
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    border-top: 10px solid var(--skin-color);
-    border-left: 10px solid var(--skin-color);
-    left: -20px;
-    top: -40px;
-}
 .home .home-img img
 {
     margin: auto;
-    border-radius: 5px;
-    height: 400px;
+    border-radius: 50%;
+    height: 320px;
+    width: 320px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+/* Cercle rotatif autour de la photo */
+.home .home-img .img-box {
+    position: relative;
+    display: inline-block;
+}
+.home .home-img .circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 3px dashed var(--skin-color);
+    animation: rotateSpin 12s linear infinite;
+    opacity: 0.6;
+}
+@keyframes rotateSpin {
+    0%   { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Compteurs animés */
+.home-stats {
+    margin-top: 60px;
+    justify-content: center;
+    gap: 0;
+}
+.home-stats .stat-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    text-align: center;
+    border-right: 1px solid var(--bg-black-50);
+}
+.home-stats .stat-item:last-child {
+    border-right: none;
+}
+.home-stats .stat-item h3 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--skin-color);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+.home-stats .stat-item p {
+    font-size: 14px;
+    color: var(--text-black-700);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0;
 }
 /* About*/
 .about .about-content
@@ -840,7 +874,7 @@ h3.my-profession
         margin-left: 0;
     }
 }
-@media (max-width: 991px) 
+@media (max-width: 991px)
 {
     .contact .contact-info-item,
     .portfolio .portfolio-item,
@@ -857,6 +891,25 @@ h3.my-profession
     .home .home-img
     {
         display: none;
+    }
+    .home-stats .stat-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 576px) {
+    .home-stats .stat-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .home .home-img .circle-spin {
+        width: 270px;
+        height: 270px;
+    }
+    .home .home-img img {
+        height: 240px;
+        width: 240px;
     }
 }
 @media (max-width: 767px) 
