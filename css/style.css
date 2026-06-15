@@ -803,6 +803,67 @@ h3.my-profession
     z-index: 999;
     cursor: pointer;
 }
+/* ===== Point clignotant sur le hamburger (mobile) ===== */
+@keyframes pulseDot {
+    0%, 100% { transform: scale(1);   opacity: 1;   }
+    50%       { transform: scale(1.7); opacity: 0.4; }
+}
+.Hama .nav-toggler.nav-pulse {
+    position: relative;
+}
+.Hama .nav-toggler.nav-pulse::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--skin-color);
+    border-radius: 50%;
+    animation: pulseDot 1.1s ease-in-out infinite;
+    box-shadow: 0 0 6px var(--skin-color);
+}
+
+/* ===== Bottom Navigation (mobile) ===== */
+.bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-black-100);
+    border-top: 2px solid var(--skin-color);
+    z-index: 9000;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6px 0 8px;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.25);
+}
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-black-700);
+    font-size: 10px;
+    gap: 3px;
+    padding: 4px 6px;
+    text-decoration: none;
+    transition: color 0.25s;
+    min-width: 44px;
+}
+.bottom-nav-item i {
+    font-size: 17px;
+}
+.bottom-nav-item.active,
+.bottom-nav-item:hover {
+    color: var(--skin-color);
+}
+.bottom-nav-item.active i {
+    transform: translateY(-2px);
+    transition: transform 0.25s;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
     .Hama {
@@ -1167,56 +1228,6 @@ h3.my-profession
 }
 #scroll-top:hover {
     transform: translateY(-4px);
-}
-
-/* ===== Pulse animation hamburger (mobile) ===== */
-@keyframes navBounce {
-    0%, 100%  { transform: translateY(0); }
-    30%       { transform: translateY(-7px); }
-    60%       { transform: translateY(-3px); }
-}
-.Hama .nav-toggler.nav-pulse {
-    animation: navBounce 1.6s ease infinite;
-}
-
-/* ===== Bottom Navigation (mobile) ===== */
-.bottom-nav {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--bg-black-100);
-    border-top: 2px solid var(--skin-color);
-    z-index: 9000;
-    justify-content: space-around;
-    align-items: center;
-    padding: 6px 0 8px;
-    box-shadow: 0 -3px 12px rgba(0,0,0,0.25);
-}
-.bottom-nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-black-700);
-    font-size: 10px;
-    gap: 3px;
-    padding: 4px 6px;
-    text-decoration: none;
-    transition: color 0.25s;
-    min-width: 44px;
-}
-.bottom-nav-item i {
-    font-size: 17px;
-}
-.bottom-nav-item.active,
-.bottom-nav-item:hover {
-    color: var(--skin-color);
-}
-.bottom-nav-item.active i {
-    transform: translateY(-2px);
-    transition: transform 0.25s;
 }
 
 /* ===== Icônes sociales + boutons CV dans Home ===== */
