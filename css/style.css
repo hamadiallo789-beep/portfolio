@@ -1161,6 +1161,90 @@ h3.my-profession
     transform: translateY(-4px);
 }
 
+/* ===== Icônes sociales + boutons CV dans Home ===== */
+.home-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 15px;
+}
+.cv-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 5px;
+}
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--skin-color);
+    color: var(--skin-color);
+}
+.btn-outline:hover {
+    background: var(--skin-color);
+    color: #ffffff;
+}
+
+/* ===== Modal Aperçu CV ===== */
+.cv-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+.cv-modal-overlay.active {
+    display: flex;
+}
+.cv-modal-content {
+    background: var(--bg-black-900);
+    border-radius: 10px;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.cv-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: var(--bg-black-100);
+    border-bottom: 2px solid var(--skin-color);
+    color: var(--text-black-900);
+    font-weight: 600;
+    font-size: 15px;
+}
+.cv-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 13px;
+}
+#cv-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-black-700);
+    line-height: 1;
+    padding: 0 4px;
+    transition: color 0.2s;
+}
+#cv-modal-close:hover {
+    color: var(--skin-color);
+}
+.cv-modal-content iframe {
+    flex: 1;
+    border: none;
+}
+
 /* =======================================================Droit d'auteur ===================================*/
 /* Footer */
 .footer {

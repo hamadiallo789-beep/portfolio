@@ -66,8 +66,20 @@
                        data-fr="J'aide les organisations à transformer les données en informations exploitables, améliorer la prise de décision et maximiser l'impact des projets grâce à l'analyse de données, aux systèmes MEAL et aux tableaux de bord interactifs.">
                         I help organizations transform data into actionable insights, improve decision-making, and maximize project impact through data analytics, MEAL systems, and interactive dashboards.
                     </p>
-                    <!-- ✅ CORRECTION 3 : Download CV — télécharge le PDF -->
-                    <a href="01.CV_Hama_DIALLO.pdf" download="CV_Hama_DIALLO.pdf" class="btn hire-me" data-en="Download CV" data-fr="Télécharger CV">Download CV</a>
+                    <!-- Icônes réseaux sociaux -->
+                    <div class="home-social">
+                        <a href="https://github.com/HamaDIALLO" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/hama-diallo789" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.credly.com/users/hama-diallo.ed15a172" target="_blank" class="social-icon" title="Credly"><i class="fas fa-certificate"></i></a>
+                        <a href="https://x.com/skou_diallo" target="_blank" class="social-icon" title="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://web.facebook.com/profile.php?id=100053198927390" target="_blank" class="social-icon" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/hamadiallo7267/" target="_blank" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <!-- Boutons CV -->
+                    <div class="cv-buttons">
+                        <button class="btn" id="view-cv-btn" data-en="View CV" data-fr="Voir le CV">View CV</button>
+                        <a href="01.CV_Hama_DIALLO.pdf" download="CV_Hama_DIALLO.pdf" class="btn btn-outline" data-en="Download CV" data-fr="Télécharger CV">Download CV</a>
+                    </div>
                 </div>
                 <div class="home-img padd-15">
                     <div class="img-box">
@@ -728,6 +740,20 @@
     
 </div>
 <!--=== Style Switcher End ===-->
+
+<!-- Modal Aperçu CV -->
+<div id="cv-modal" class="cv-modal-overlay" role="dialog" aria-modal="true" aria-label="Aperçu CV">
+    <div class="cv-modal-content">
+        <div class="cv-modal-header">
+            <span data-en="CV — Hama DIALLO" data-fr="CV — Hama DIALLO">CV — Hama DIALLO</span>
+            <div class="cv-modal-actions">
+                <a href="01.CV_Hama_DIALLO.pdf" download="CV_Hama_DIALLO.pdf" class="btn btn-sm" data-en="Download" data-fr="Télécharger">Download</a>
+                <button id="cv-modal-close" aria-label="Fermer">&times;</button>
+            </div>
+        </div>
+        <iframe src="01.CV_Hama_DIALLO.pdf" title="CV Hama DIALLO" width="100%" height="100%"></iframe>
+    </div>
+</div>
 
 <!-- Bouton Scroll to Top -->
 <button id="scroll-top" title="Retour en haut" aria-label="Retour en haut">

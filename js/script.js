@@ -280,6 +280,35 @@ navList.forEach(function (li) {
     });
 })();
 
+/* ========================= Modal Aperçu CV ========================= */
+(function () {
+    var modal = document.getElementById("cv-modal");
+    var openBtn = document.getElementById("view-cv-btn");
+    var closeBtn = document.getElementById("cv-modal-close");
+    if (!modal || !openBtn || !closeBtn) return;
+
+    openBtn.addEventListener("click", function () {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+    });
+    closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+    });
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    });
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            modal.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    });
+})();
+
 /* ========================= Scroll to Top ========================= */
 (function () {
     var btn = document.getElementById("scroll-top");
