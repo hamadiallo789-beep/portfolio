@@ -77,7 +77,14 @@ document.querySelectorAll(".hire-me[data-section-index]").forEach(function (btn)
 const navTogglerBtn = document.querySelector(".nav-toggler"),
       Hama = document.querySelector(".Hama");
 
+// Pulse sur le hamburger au chargement (mobile seulement)
+if (window.innerWidth < 1199) {
+    navTogglerBtn.classList.add("nav-pulse");
+}
+
 navTogglerBtn.addEventListener("click", () => {
+    // Arrêter le pulse dès le premier clic
+    navTogglerBtn.classList.remove("nav-pulse");
     asideSectionTogglerBtn();
 });
 
@@ -276,6 +283,45 @@ navList.forEach(function (li) {
             feedback.style.display = "block";
             btn.disabled = false;
             btn.textContent = isFr ? "Envoyer le Message" : "Send Message";
+        });
+    });
+})();
+
+/* ========================= Bottom Navigation (mobile) ========================= */
+(function () {
+    var bottomItems = document.querySelectorAll(".bottom-nav-item");
+
+    bottomItems.forEach(function (item) {
+        item.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Retirer active de tous les items bottom nav
+            bottomItems.forEach(function (i) { i.classList.remove("active"); });
+            this.classList.add("active");
+
+            // Afficher la section ciblée (réutilise les fonctions existantes)
+            removeBackSection();
+            for (var j = 0; j < totalNavList; j++) {
+                if (navList[j].querySelector("a").classList.contains("active")) {
+                    addBackSection(j);
+                }
+                navList[j].querySelector("a").classList.remove("active");
+            }
+            showSection(this);
+            updateNav(this);
+        });
+    });
+
+    // Synchroniser le bottom nav quand on clique sur la sidebar
+    navList.forEach(function (li) {
+        li.querySelector("a").addEventListener("click", function () {
+            var target = this.getAttribute("href");
+            bottomItems.forEach(function (item) {
+                item.classList.remove("active");
+                if (item.getAttribute("href") === target) {
+                    item.classList.add("active");
+                }
+            });
         });
     });
 })();
