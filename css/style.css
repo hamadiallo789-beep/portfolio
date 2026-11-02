@@ -1444,3 +1444,49 @@ h3.my-profession
 }
 
 .portfolio .mission-note { font-size: 12px; font-style: italic; color: var(--text-black-700); margin-top: 6px; }
+
+/* ========================= Affichage mobile et tablette ========================= */
+@media (max-width: 1199px) {
+    /* Le contenu se termine bien au-dessus de la barre de navigation du bas */
+    .section {
+        padding-bottom: calc(130px + env(safe-area-inset-bottom, 0px));
+    }
+    .bottom-nav {
+        padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+    }
+    /* Bouton retour en haut au-dessus de la barre du bas */
+    #scroll-top {
+        bottom: calc(82px + env(safe-area-inset-bottom, 0px));
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    /* Icônes langue / thème / couleurs alignées en haut à droite, hors du contenu */
+    body .style-switcher {
+        top: 15px;
+    }
+    body .style-switcher .s-icon {
+        height: 36px;
+        width: 36px;
+        font-size: 16px;
+        top: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    body .style-switcher .s-icon i {
+        line-height: 36px;
+    }
+    body .style-switcher .lang-switcher { top: 0; margin-right: 12px; font-size: 18px; line-height: 36px; }
+    body .style-switcher .day-night { top: 0; margin-right: 56px; }
+    body .style-switcher .style-switcher-toggler { top: 0; margin-right: 100px; }
+    /* Bouton "Voir toutes mes certifications" bien visible */
+    .cert-btn-wrap {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+    .cert-btn-wrap .btn {
+        display: inline-block;
+        max-width: 100%;
+        white-space: normal;
+    }
+}
