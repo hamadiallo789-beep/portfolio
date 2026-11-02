@@ -375,3 +375,29 @@ navList.forEach(function (li) {
         if (active) active.scrollTo({ top: 0, behavior: "smooth" });
     });
 })();
+/* ========================= Mobile : masquer les icônes flottantes pendant le défilement ========================= */
+(function () {
+    var switcher = document.querySelector(".style-switcher");
+    if (!switcher) return;
+    var lastTop = {};
+    document.querySelectorAll(".section").forEach(function (section) {
+        section.addEventListener("scroll", function () {
+            if (window.innerWidth > 1199 || switcher.classList.contains("open")) {
+                switcher.classList.remove("hide-on-scroll");
+                return;
+            }
+            var top = section.scrollTop;
+            var prev = lastTop[section.id] || 0;
+            if (top > 60 && top > prev) {
+                switcher.classList.add("hide-on-scroll");
+            } else if (top < prev - 5 || top <= 60) {
+                switcher.classList.remove("hide-on-scroll");
+            }
+            lastTop[section.id] = top;
+        }, { passive: true });
+    });
+    // Revenir sur une autre section réaffiche les icônes
+    document.querySelectorAll(".nav a, .bottom-nav a").forEach(function (a) {
+        a.addEventListener("click", function () { switcher.classList.remove("hide-on-scroll"); });
+    });
+})();

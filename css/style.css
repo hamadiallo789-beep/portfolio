@@ -1490,3 +1490,10 @@ h3.my-profession
         white-space: normal;
     }
 }
+@media (max-width: 1199px) {
+    body .style-switcher.hide-on-scroll .s-icon {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-20px);
+    }
+}
