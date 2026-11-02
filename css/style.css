@@ -1508,3 +1508,24 @@ h3.my-profession
     display: block;
     object-fit: contain;
 }
+
+/* ===== Logo Waaldé Impact ===== */
+.about .about-content .company-logo {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 16px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 4px 0 2px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.about .about-content .company-logo img {
+    display: block;
+    height: 90px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+@media (max-width: 767px) {
+    .about .about-content .company-logo img { height: 70px; }
+}
