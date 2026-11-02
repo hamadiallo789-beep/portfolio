@@ -1,6 +1,6 @@
 /* ========================= typing animation ========================= */
-var typedStringsEN = ["Data Scientist", "Data Analyst", "Power BI Developer", "MEAL Officer"];
-var typedStringsFR = ["Data Scientist", "Analyste de Données", "Développeur Power BI", "Chargé MEAL"];
+var typedStringsEN = ["Data Scientist", "Statistician & Economist", "Senior Development Consultant", "MEAL & Strategy Advisor"];
+var typedStringsFR = ["Data Scientist", "Statisticien-Économiste", "Consultant Senior en Développement", "Conseiller MEAL & Stratégie"];
 
 var typed = new Typed(".typing", {
     strings: typedStringsEN,
@@ -171,7 +171,7 @@ navList.forEach(function (li) {
 
 /* ========================= Années d'expérience dynamiques ========================= */
 (function () {
-    var startYear = 2021; // Début de l'expérience professionnelle
+    var startYear = 2016; // Début de l'expérience professionnelle
     var years = new Date().getFullYear() - startYear;
     document.getElementById("exp-years-en").textContent = years;
     document.getElementById("exp-years-fr").textContent = years;

@@ -1333,3 +1333,114 @@ h3.my-profession
     color: var(--skin-color);
     font-weight: 600;
 }
+
+/* ========================= Compétences par domaine ========================= */
+.about .about-content .skills .skill-group
+{
+    margin-bottom: 18px;
+}
+.about .about-content .skills .skill-group-title
+{
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--skin-color);
+    margin: 0 0 8px;
+}
+.about .about-content .skills .skill-tags
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.about .about-content .skills .skill-tag
+{
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-black-900);
+    background: var(--bg-black-50);
+    border: 1px solid var(--skin-color);
+    border-radius: 20px;
+    padding: 3px 12px;
+    line-height: 1.6;
+}
+
+
+/* ========================= Chiffres clés ========================= */
+.about .about-content .section-subtitle { flex: 0 0 100%; max-width: 100%; margin-top: 30px; }
+.about .about-content .key-figures .stat-item { flex: 0 0 16.66%; max-width: 16.66%; margin-bottom: 15px; }
+.about .about-content .stat-inner
+{
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-top: 3px solid var(--skin-color);
+    border-radius: 10px;
+    padding: 18px 10px;
+    text-align: center;
+    height: 100%;
+}
+.about .about-content .stat-number { font-size: 28px; font-weight: 700; color: var(--skin-color); line-height: 1.2; }
+.about .about-content .stat-label { font-size: 12px; line-height: 1.5; color: var(--text-black-700); margin-top: 6px; text-align: center; }
+
+/* ========================= Entreprise ========================= */
+.about .about-content .company-box { flex: 0 0 100%; max-width: 100%; margin-top: 15px; }
+.about .about-content .company-inner
+{
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-left: 5px solid var(--skin-color);
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.about .about-content .company-title { font-size: 22px; font-weight: 700; color: var(--text-black-900); }
+.about .about-content .company-role { font-size: 13px; font-weight: 600; color: var(--skin-color); }
+.about .about-content .company-inner p { font-size: 14px; line-height: 1.7; color: var(--text-black-700); }
+.about .about-content .company-inner .company-poles { font-size: 12px; font-weight: 500; }
+.about .about-content .company-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 6px; }
+.about .about-content .company-links a { font-size: 13px; color: var(--text-black-900); }
+.about .about-content .company-links a i { color: var(--skin-color); margin-right: 4px; }
+.about .about-content .company-links a:hover { color: var(--skin-color); }
+
+/* ========================= Missions ========================= */
+.portfolio .mission-item { flex: 0 0 33.33%; max-width: 33.33%; margin-bottom: 30px; }
+.portfolio .mission-inner
+{
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    padding: 20px 18px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.portfolio .mission-title { font-size: 16px; font-weight: 700; color: var(--text-black-900); margin: 4px 0 0; }
+.portfolio .mission-meta { font-size: 12px; font-weight: 500; color: var(--skin-color); }
+.portfolio .mission-desc { font-size: 13px; line-height: 1.7; color: var(--text-black-700); flex: 1; }
+.portfolio .mission-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.portfolio .mission-chip
+{
+    font-size: 11px; font-weight: 600; color: var(--text-black-900);
+    background: var(--bg-black-50); border-radius: 20px; padding: 3px 10px;
+}
+@media (max-width: 1199px) {
+    .about .about-content .key-figures .stat-item { flex: 0 0 33.33%; max-width: 33.33%; }
+}
+@media (max-width: 991px) {
+    .portfolio .mission-item { flex: 0 0 50%; max-width: 50%; }
+}
+@media (max-width: 767px) {
+    .portfolio .mission-item { flex: 0 0 100%; max-width: 100%; }
+    .about .about-content .key-figures .stat-item { flex: 0 0 50%; max-width: 50%; }
+}
+
+.about .about-content .company-inner .portfolio-tag
+{
+    display: inline-block; background: var(--skin-color); color: #ffffff;
+    font-size: 11px; font-weight: 600; padding: 3px 12px; border-radius: 20px;
+    text-transform: uppercase; letter-spacing: 1px; width: fit-content;
+}
+
+.portfolio .mission-note { font-size: 12px; font-style: italic; color: var(--text-black-700); margin-top: 6px; }
