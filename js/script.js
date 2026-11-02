@@ -1,6 +1,6 @@
 /* ========================= typing animation ========================= */
-var typedStringsEN = ["Data Scientist", "Data Analyst", "Power BI Developer", "MEAL Officer"];
-var typedStringsFR = ["Data Scientist", "Analyste de Données", "Développeur Power BI", "Chargé MEAL"];
+var typedStringsEN = ["Data Scientist", "Statistician & Economist", "Development Consultant", "MEAL & Strategy Advisor"];
+var typedStringsFR = ["Data Scientist", "Statisticien-Économiste", "Consultant en Développement", "Conseiller MEAL & Stratégie"];
 
 var typed = new Typed(".typing", {
     strings: typedStringsEN,

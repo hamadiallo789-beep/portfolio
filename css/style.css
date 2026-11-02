@@ -1333,3 +1333,33 @@ h3.my-profession
     color: var(--skin-color);
     font-weight: 600;
 }
+
+/* ========================= Compétences par domaine ========================= */
+.about .about-content .skills .skill-group
+{
+    margin-bottom: 18px;
+}
+.about .about-content .skills .skill-group-title
+{
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--skin-color);
+    margin: 0 0 8px;
+}
+.about .about-content .skills .skill-tags
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.about .about-content .skills .skill-tag
+{
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-black-900);
+    background: var(--bg-black-50);
+    border: 1px solid var(--skin-color);
+    border-radius: 20px;
+    padding: 3px 12px;
+    line-height: 1.6;
+}
